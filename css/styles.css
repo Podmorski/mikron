@@ -2884,7 +2884,57 @@ img.u-pull-left {
 .s-header__block {
     z-index : 101;
 }
+/* Add this to your css/styles.css file */
 
+.s-header__phone {
+    list-style : none; /* Ensure no bullet points */
+    display    : flex; /* Use flexbox for alignment if needed, though usually direct text is fine */
+    align-items: center; /* Vertically align content if text has different height */
+    margin     : 0;
+    transform  : translate(0, -50%); /* Adjust based on exact vertical alignment */
+    position   : absolute;
+    top        : calc(50% - .2rem); /* Matches original social top position */
+    right      : 2rem; /* Positions it on the right */
+    padding: 0; /* Remove default padding */
+}
+
+.s-header__phone a {
+    color: white; /* Set text color to white */
+    font-family: var(--font-1); /* Match site's primary font */
+    font-size: 1.5rem; /* Adjust font size for readability */
+    font-weight: 500; /* Adjust weight as desired */
+    letter-spacing: 0.1em; /* Add some letter spacing if it looks better */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease-in-out; /* Add transition for hover effect */
+}
+
+.s-header__phone a:hover {
+    color: var(--color-1); /* Change color on hover (e.g., to green) */
+}
+
+/* Optional: Adjust for smaller screens if the number overlaps or needs to be smaller */
+@media screen and (max-width: 900px) { /* This breakpoint is where header layout changes */
+    .s-header__phone {
+        position: static; /* Remove absolute positioning */
+        transform: none; /* Remove transform */
+        text-align: right; /* Align right within its new flow */
+        margin-top: 1rem; /* Add some margin from top elements */
+        width: 100%; /* Take full width if in a block layout */
+        padding-right: 2.8rem; /* Match mobile menu right padding */
+        padding-left: 2.8rem; /* Match mobile menu left padding */
+    }
+
+    .s-header__phone a {
+        font-size: 1.6rem; /* Make it slightly larger for better tapability on mobile */
+        letter-spacing: 0; /* Remove letter spacing on mobile */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .s-header__phone a {
+        font-size: 1.4rem; /* Smaller on very small mobile */
+    }
+}
 /* --------------------------------------------------------------------
  * ## logo
  * -------------------------------------------------------------------- */
