@@ -3184,6 +3184,61 @@ img.u-pull-left {
  *
  *
  * ------------------------------------------------------------------- */
+/* In your css/styles.css file */
+
+.s-intro__text {
+    /* Existing properties... */
+    font-size: 5.0rem; /* Adjust this value (e.g., 4.5rem, 5.5rem) to achieve desired "smaller" size */
+    line-height: 1.2;  /* Slightly adjust line height for better spacing with the new font size */
+    
+    /* Ensure these are not overriding your new font-size/line-height if they exist */
+    /* --text-huge             : 7.6rem; */
+    /* --text-huge-line-height : 1.158; */
+    /* --text-huge-multiplier  : 1; */
+    /* font-size: calc(var(--text-huge) * var(--text-huge-multiplier)); */
+    /* line-height: var(--text-huge-line-height); */
+}
+
+/* Force the <br> tag to always create a line break within this headline */
+.s-intro__text br {
+    display: initial !important; /* 'initial' or 'block' forces the line break */
+}
+
+/* Keep "Mikron Valjevo" bold */
+.s-intro__text strong {
+    font-weight: 700; /* Use a strong bold weight */
+    color: white; /* Ensure visibility against the background */
+}
+
+/* Optional: Adjust font size for responsiveness at smaller screen widths */
+@media screen and (max-width: 1200px) {
+    /* If the original template had `display: none;` for `s-intro__text br` here,
+       the `!important` above should handle it. This media query might also be
+       where you had `text-huge-multiplier` changes. Ensure your explicit font-size
+       overrides those or adjust them. */
+    /* Example adjustment for smaller desktop/large tablet */
+    .s-intro__text {
+        font-size: 4.5rem; /* Smaller font for medium screens */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .s-intro__text {
+        font-size: 3.5rem; /* Smaller font for tablets */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .s-intro__text {
+        font-size: 2.8rem; /* Even smaller for mobile devices */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .s-intro__text {
+        font-size: 2.2rem; /* Smallest for very tiny screens */
+    }
+}
 .s-intro {
     --text-huge             : 7.6rem;
     --text-huge-line-height : 1.158;
