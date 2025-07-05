@@ -4299,3 +4299,9 @@ img.u-pull-left {
         width  : var(--vspace-1_25);
     }
 }
+    /* Add this to your css/styles.css file */
+
+.s-intro__text strong {
+    font-weight: 700; /* Or 600, 800, 900 depending on desired boldness */
+    color: white; /* Ensure it stands out, or match existing headline color */
+}
